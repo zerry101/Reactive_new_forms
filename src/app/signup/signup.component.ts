@@ -1,3 +1,4 @@
+import { ArrayType } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {FormGroup} from "@angular/forms";
@@ -13,6 +14,7 @@ export class SignupComponent {
 // username=new FormControl("");
   // userForm:FormGroup | undefined;
 
+  stateOptions:string[]=["AO","OP","lP"];
 
   clear_name(){
     // 1 ->this.username.reset();
@@ -23,7 +25,13 @@ export class SignupComponent {
   userForm:FormGroup=new FormGroup({
     username:new FormControl(""),
     password:new FormControl(""),
-    confirmpassword:new FormControl("")
+    confirmpassword:new FormControl(""),
+    address:new FormGroup({
+      street:new FormControl(""),
+      city:new FormControl(""),
+      state:new FormControl(""),
+      zip:new FormControl("")
+    })
   });
 
 
