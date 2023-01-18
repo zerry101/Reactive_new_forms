@@ -3,29 +3,50 @@
     <div class="text-center">
       <h4>Sign Up</h4>
     </div>
-    <div class="form-group">
+
+    <form [formGroup]="userForm" (ngSubmit)="submit()">
+
       <label for="username">UserName</label>
-      <input
-      [formControl]="username"
-        type="text"
-        class="form-control"
-        id="username"
-        placeholder="Username"
-      />
+      <input formControlName="username" type="text" class="form-control" id="username" placeholder="Username" />
+
+
+      <label for="username">Password</label>
+      <input formControlName="password" type="text" class="form-control" id="username" placeholder="Password" />
+
+
+      <label for="username">ConfirmPassword</label>
+      <input formControlName="confirmpassword" type="text" class="form-control" id="username" placeholder="ConfirmPassword" />
+
 
       <p>
-        value:{{username.value}}
-
+        <button class="btn btn-success" type="submit">
+          <i class="fas fa-save"></i>Save
+        </button>
+        <button (click)="clear()" style="margin: 2vh;" class="btn btn-warning" >
+          <i class="fas fa-snowplow"></i>clear
+        </button>
       </p>
 
-    </div>
-    <p>
-      <button class="btn btn-success" type="submit">
-        <i class="fas fa-save"></i>Save
-      </button>
-      <button  (click)="clear()" style="margin: 2vh;" class="btn btn-warning" type="submit">
-        <i class="fas fa-snowplow"></i>clear
-      </button>
-    </p>
+
+    </form>
+<!--
+    <div class="form-group">
+      <input [formControl]="name" type="text" class="form-control" id="name" placeholder="name" />
+    </div> -->
+<div>
+
+  <h3>Individual Input Name Not in FormGroup</h3>
+
+  <label for="name">Name</label>
+      <input   [formControl]="name" type="text" class="form-control" id="Name" placeholder="Name" />
+
+    <button (click)="clear_name()" style="margin: 2vh;" class="btn btn-warning" type="submit">
+      <i class="fas fa-snowplow"></i>clear_name
+    </button>
+
+
+</div>
+
+
   </div>
 </div>
