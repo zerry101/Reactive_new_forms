@@ -11,3 +11,57 @@ class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-cente
 <button (click)="print()" class="btn btn-warning">
 stu1
 </button>
+
+
+
+<div class="row">
+  <div class="col-sm-6 offset-3">
+    <div class="text-center">
+      <h4>Sign Up</h4>
+
+      <form [formGroup]="userForm" (ngSubmit)="formSubmit()">
+
+
+        <label for="username">UserName</label>
+        <input formControlName="username" type="text" class="form-control" id="UserName" placeholder="Username" />
+
+        <label for="password">Password</label>
+        <input formControlName="password" type="text" class="form-control" id="Password" placeholder="Password" />
+
+        <label for="confirmpassword">Password</label>
+        <input formControlName="confirmpassword" type="text" class="form-control" id="Password" placeholder="Password" />
+
+
+        <section formGroupName="address">
+
+          <label for="street">Street</label>
+          <input formControlName="street" type="text" class="form-control" id="Street" placeholder="Street" />
+
+          <label for="city">City</label>
+          <input formControlName="city" type="text" class="form-control" id="City" placeholder="City" />
+
+          <label for="state">State</label>
+          <input formControlName="state" type="text" class="form-control" id="State" placeholder="State" />
+
+          <label for="zip">Zip</label>
+          <input formControlName="zip" type="text" class="form-control" id="Zip" placeholder="Zip" />
+
+
+        </section>
+
+
+        <button class="btn btn-success" type="submit">
+          <i class="fas fa-save"></i>Save
+        </button>
+
+        <button class="btn btn-info" (click)="autoFillFormAddress()">
+          AutoFillAddress
+        </button>
+
+        <button (click)="clear()" style="margin: 2vh;" class="btn btn-warning">
+          <i class="fas fa-snowplow"></i>clear
+        </button>
+
+      </form>
+
+    </div>
