@@ -15,8 +15,12 @@ interface ic extends Ia,Ib{
 }
 
 
+
+
 class student1 implements ic
 {
+
+
 constructor(){
   this.marks=[20,20,20];
   ui:String;
@@ -25,6 +29,7 @@ constructor(){
   roll: number | undefined;
   marks: number[] | undefined;
   stu_names: string[] | undefined;
+
 
 }
 
@@ -41,7 +46,9 @@ export class FormBuilderComponent {
 
     print(){
       console.log(this.stu1.marks);
+
     }
+
 
 
 
