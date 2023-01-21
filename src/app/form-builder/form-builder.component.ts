@@ -33,6 +33,11 @@ class student1 implements ic {
 
 }
 
+
+// ////////
+
+
+////////////
 @Component({
   selector: 'app-form-builder',
   templateUrl: './form-builder.component.html',
@@ -89,6 +94,11 @@ export class FormBuilderComponent implements OnInit {
   clear(){
     this.userForm.reset();
   }
+
+
+
+
+
 
 
 
