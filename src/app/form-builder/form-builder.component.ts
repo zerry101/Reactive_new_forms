@@ -112,6 +112,9 @@ export class FormBuilderComponent implements OnInit {
   get userNameControl() { return this.userForm.get('username'); }
   get passwordControl() { return this.userForm.get('password'); }
   get confirmPasswordControl() { return this.userForm.get('confirmpassword'); }
-  get addressStreetControl() { return this.userForm.controls['address'].get('street') }
+  get addressStreetControl() { return this.userForm.controls['address'].get('street');}
+  get addressCityControl(){return this.userForm.controls['address'].get('city');}
+  get addressStateControl(){return this.userForm.controls['address'].get('state');}
+  get addressZipControl(){return this.userForm.controls['address'].get('zip');}
 
 }

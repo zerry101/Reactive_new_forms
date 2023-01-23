@@ -22,13 +22,13 @@
 
           <label for="username">UserName</label>
           <input formControlName="username"
-            [ngClass]="{'is-invalid':userNameControl?.touched && userNameControl?.invalid}"
-            type="text" class="form-control" id="UserName" placeholder="Username" />
+            [ngClass]="{'is-invalid':userNameControl?.touched && userNameControl?.invalid}" type="text"
+            class="form-control" id="UserName" placeholder="Username" />
 
           <label for="password">Password</label>
           <input formControlName="password"
-            [ngClass]="{'is-invalid':passwordControl?.touched &&  passwordControl?.invalid}"
-            type="password" class="form-control" id="Password" placeholder="Password" />
+            [ngClass]="{'is-invalid':passwordControl?.touched &&  passwordControl?.invalid}" type="password"
+            class="form-control" id="Password" placeholder="Password" />
 
           <label for="confirmpassword">Password</label>
           <input formControlName="confirmpassword"
@@ -40,17 +40,29 @@
 
             <label for="street">Street</label>
             <input formControlName="street"
-              [ngClass]="{'is-invalid': addressStreetControl?.touched && addressStreetControl?.invalid}"
-              type="text" class="form-control" id="Street" placeholder="Street" />
+              [ngClass]="{'is-invalid': addressStreetControl?.touched && addressStreetControl?.invalid}" type="text"
+              class="form-control" id="Street" placeholder="Street" />
 
             <label for="city">City</label>
-            <input formControlName="city" type="text" class="form-control" id="City" placeholder="City" />
+            <input formControlName="city"
+              [ngClass]="{'is-invalid':addressCityControl?.touched && addressCityControl?.invalid}" type="text"
+              class="form-control" id="City" placeholder="City" />
+
+
 
             <label for="state">State</label>
-            <input formControlName="state" type="text" class="form-control" id="State" placeholder="State" />
+            <input formControlName="state"
+              [ngClass]="{'is-invalid':addressCityControl?.touched && addressCityControl?.invalid}" type="text"
+              class="form-control" id="State" placeholder="State" />
 
             <label for="zip">Zip</label>
-            <input formControlName="zip" type="text" class="form-control" id="Zip" placeholder="Zip" />
+            <input formControlName="zip"
+              [ngClass]="{'is-invalid':addressZipControl?.touched && addressZipControl?.invalid}" type="text"
+              class="form-control" id="Zip" placeholder="Zip" />
+
+              <div *ngIf="addressZipControl?.invalid">
+                <span>Zip is not filled </span>
+              </div>
 
 
           </section>
