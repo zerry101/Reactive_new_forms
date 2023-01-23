@@ -48,6 +48,8 @@ export class FormBuilderComponent implements OnInit {
   username: any;
   submitted: boolean = false;
 
+
+
   fillAdressObj: any = {
     username: "harry",
     password: "barry",
@@ -77,7 +79,7 @@ export class FormBuilderComponent implements OnInit {
 
   private setupForm() {
     this.userForm = this.fb.group({
-      username: ["", Validators.required],
+      username: ["", Validators.required,Validators.minLength(4)],
       password: ["", Validators.required],
       confirmpassword: ["", Validators.required],
       address: this.fb.group({
@@ -112,9 +114,9 @@ export class FormBuilderComponent implements OnInit {
   get userNameControl() { return this.userForm.get('username'); }
   get passwordControl() { return this.userForm.get('password'); }
   get confirmPasswordControl() { return this.userForm.get('confirmpassword'); }
-  get addressStreetControl() { return this.userForm.controls['address'].get('street');}
-  get addressCityControl(){return this.userForm.controls['address'].get('city');}
-  get addressStateControl(){return this.userForm.controls['address'].get('state');}
-  get addressZipControl(){return this.userForm.controls['address'].get('zip');}
+  get addressStreetControl() { return this.userForm.get('address')?.get('street');}
+  get addressCityControl(){return this.userForm.get('address')?.get('city');}
+  get addressStateControl(){return this.userForm.get('address')?.get('state');}
+  get addressZipControl(){return this.userForm.get('address')?.get('zip');}
 
 }
