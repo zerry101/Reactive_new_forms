@@ -50,7 +50,7 @@ export class FormBuilderComponent implements OnInit {
 
 
 
-  fillAdressObj: any = {
+  fillAdressObj: Object = {
     username: "harry",
     password: "barry",
     confirmpassword: "barry",
@@ -66,6 +66,8 @@ export class FormBuilderComponent implements OnInit {
   userForm: FormGroup = new FormGroup({
     address: new FormGroup({})
   });
+  // userForm:any;
+
 
   constructor(private fb: FormBuilder) { }
 
