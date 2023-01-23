@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 interface Ia {
   name: string | undefined,
@@ -45,17 +45,8 @@ class student1 implements ic {
 })
 export class FormBuilderComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
-
-  stu1 = new student1();
-
-  print() {
-    console.log(this.stu1.marks);
-  }
+  username: any;
+  submitted: boolean = false;
 
   fillAdressObj: any = {
     username: "harry",
@@ -64,44 +55,63 @@ export class FormBuilderComponent implements OnInit {
     address: {
       street: "34",
       city: "surat",
-      state:"MP",
-      zip:"234567"
+      state: "MP",
+      zip: "234567"
     }
   }
 
-  userForm = this.fb.group({
-    username: [""],
-    password: [""],
-    confirmpassword: [""],
-    address: this.fb.group({
-      street: [""],
-      city: [""],
-      state: [""],
-      zip: [""]
-    })
+  stu1 = new student1();
+  userForm: FormGroup = new FormGroup({
+    address: new FormGroup({})
+  });
 
-  })
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.setupForm();
+  }
+
+  print() {
+    console.log(this.stu1.marks);
+  }
+
+  private setupForm() {
+    this.userForm = this.fb.group({
+      username: ["", Validators.required],
+      password: ["", Validators.required],
+      confirmpassword: ["", Validators.required],
+      address: this.fb.group({
+        street: ["", Validators.required],
+        city: ["", Validators.required],
+        state: ["", Validators.required],
+        zip: ["", Validators.required]
+      })
+    })
+  }
 
 
   formSubmit() {
+    if (this.userForm.invalid) {
+      this.userForm.markAllAsTouched();
+      this.userForm.markAsDirty();
+      return;
+    }
     console.log(this.userForm.value);
+    console.log(this.userForm.controls['address'].get('street'));
   }
 
   autoFillFormAddress() {
     this.userForm.patchValue(this.fillAdressObj);
   }
 
-  clear(){
+  clear() {
     this.userForm.reset();
   }
 
 
-
-
-
-
-
-
-
+  get userNameControl() { return this.userForm.get('username'); }
+  get passwordControl() { return this.userForm.get('password'); }
+  get confirmPasswordControl() { return this.userForm.get('confirmpassword'); }
+  get addressStreetControl() { return this.userForm.controls['address'].get('street') }
 
 }
