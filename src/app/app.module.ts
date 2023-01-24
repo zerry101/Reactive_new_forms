@@ -7,6 +7,8 @@ import { SignupComponent } from './signup/signup.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { ObserverComponent } from './observer/observer.component';
+import { ParentComponentComponent } from './parent-component/parent-component.component';
+import { ChildComponentComponent } from './parent-component/child-component/child-component.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { ObserverComponent } from './observer/observer.component';
     AppComponent,
     SignupComponent,
     FormBuilderComponent,
-    ObserverComponent
+    ObserverComponent,
+    ParentComponentComponent,
+    ChildComponentComponent
   ],
   imports: [
     BrowserModule,
