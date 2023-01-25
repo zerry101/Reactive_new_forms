@@ -9,6 +9,7 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { ObserverComponent } from './observer/observer.component';
 import { ParentComponentComponent } from './parent-component/parent-component.component';
 import { ChildComponentComponent } from './parent-component/child-component/child-component.component';
+import { AngularLifecycleHooksComponent } from './angular-lifecycle-hooks/angular-lifecycle-hooks.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ChildComponentComponent } from './parent-component/child-component/chil
     FormBuilderComponent,
     ObserverComponent,
     ParentComponentComponent,
-    ChildComponentComponent
+    ChildComponentComponent,
+    AngularLifecycleHooksComponent
   ],
   imports: [
     BrowserModule,

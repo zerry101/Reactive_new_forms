@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./child-component.component.scss']
 })
 export class ChildComponentComponent {
-@Input () public parentData:string | undefined;
+@Input () public parentData:string | undefined="hiii";
 @Output() public ChildEt:EventEmitter<any>=new EventEmitter();
 
 passToParentData(){
