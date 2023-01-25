@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
 import { concat } from 'rxjs';
 
 @Component({
@@ -18,8 +18,8 @@ export class AngularLifecycleHooksComponent {
     this.cpt++;
   }
 
-  ngOnChanges() {
-    console.log('ngOnChanges()');
+  ngOnChanges(changes:SimpleChange) {
+    console.log('ngOnChanges()',changes);
 
   }
   ngOnInit() {
